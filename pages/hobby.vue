@@ -26,7 +26,7 @@ img {
   background-size: cover;
   background-position-y: 1000px;
   filter: blur(2px);
-  height: 80vh;
+  height: 75vh;
   z-index: -2;
 }
 .contentContainer{

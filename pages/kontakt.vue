@@ -7,7 +7,7 @@
   const odosli = () => { 
     kontrola()
     if(error.meno==0 && error.priezvisko==0 && error.mail==0 && error.sprava==0){
-      console.log("Odoslanie na firebase")
+      console.log("Odoslanie (zatiaľ je len frontend)")
       showError=0
       template.meno="",
       template.priezvisko="",
@@ -48,7 +48,6 @@
     console.table(error)
     console.log(showError)
   }
-  //ani toto idk že čo s tým
   const skry = () =>{
     let hide= reactive(0)
     return hide
@@ -59,17 +58,17 @@
 <template>
   <div>
     <div class="bg"></div>
-    <div class="messageContainer">
-      <!--tie :class nejdu idk čo s tým a či to vobec riešiť či to nenechať len tak-->
-      <div class="error" v-if="showError==1" :class="{invisible: skry()==0}">
-        <h3>Zle si vyplnil formulár</h3>
-        <p>Skús opraviť červené vstupy</p>
-        <button @click="skry()">OK</button>
-      </div>
-      <div class="success" v-else-if="showError==0" :class="{invisible: skry()==0}">
-        <h3>Úspešne odoslané</h3>
-        <p>Správu si určite pozriem 😉</p>
-        <button @click="skry()">OK ❤</button>
+    <!--Niektoré veci úplne nefungujú ale to som si robil navyše veci ktoré boli mimo zadania-->
+    <div class="containerMessage">
+      <div class="messageContainer">
+        <div class="error" v-if="showError==1" :class="{messageContainer: showError!=0}">
+          <h3>Zle si vyplnil formulár</h3>
+          <p>Skús opraviť červené vstupy</p>
+        </div>
+        <div class="success" v-else-if="showError==0" :class="{messageContainer: showError==0}">
+          <h3>Úspešne odoslané</h3>
+          <p>Správu si určite pozriem 😉</p>
+        </div>
       </div>
     </div>
     <div class="content">
@@ -153,7 +152,7 @@ label{
   border: 2px solid black;
 }
 .messageContainer{
-  width: 100%;
+  width: 30%;
   display: flex;
   justify-content: center;
   margin-top: 5vh;
@@ -162,6 +161,10 @@ label{
   animation-name: animaciaMessagu;
   animation-duration: 5s;
   animation-timing-function: ease-out;
+}
+.containerMessage{
+  display: flex;
+  justify-content: center;
 }
 h3{
   z-index: inherit;
@@ -176,7 +179,7 @@ h3{
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 15%;
+  width: 30%;
   padding: 2% 4% 2% 4%;
   background-color: rgba(0, 255, 0, 0.5);
   color: white;
@@ -197,9 +200,7 @@ h3{
 }
 
 @keyframes animaciaMessagu{
-  0%   {top: -50%; opacity: 0;}
-  25%  {top: 5%; opacity: 1;}
-  75%  {top: 5%; opacity: 1;}
-  100% {top: -50%; opacity: 0;}
+  0%   {top: -20%; opacity: 0;}
+  100%  {top: 5%; opacity: 1;}
 }
 </style>

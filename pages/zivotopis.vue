@@ -31,10 +31,11 @@
 </template>
 
 <style scoped>
+
 img{
-  height: 130%;
+  height: 115%;
   /*margin-top: -30%;*/
-  margin-left: 25%;
+  margin-left: 20%;
   z-index: inherit;
 
 }
@@ -58,6 +59,7 @@ ul{
   padding: 5% 3% 5% 3%;
   width: 60%;
   margin-top: -10%;
+  margin-right: 10%;
 }
 ul h2{
   background-color: none;
@@ -81,10 +83,12 @@ li{
 .container {
   z-index: 1;
   width: 100%;
+  height: 60%;
   display: grid;
   justify-content: center;  
   grid-template-columns: repeat(3, 1fr);
   margin-top: -30%;
+  margin-left: -5%;
 }
 .container p{
   background-color: rgba(0,0,0, 0.4); 
@@ -92,7 +96,7 @@ li{
   padding: 5% 3% 3% 3%;
 }
 .container h2{  
-  background-color: rgba(0,0,0, 0.4); 
+  /*background-color: rgba(0,0,0, 0.4); */
   color: white;
   border-bottom: 1px solid white;
   padding: 5% 3% 3% 3%;
@@ -105,12 +109,15 @@ li{
   z-index: inherit;
 
 }
+.info h2{
+  background-color: rgba(0,0,0, 0.4);
+}
 .bg{
   background-image: url("~/assets/background.jpg");
   background-size: cover;
   background-position-y: 1000px;
   filter: blur(2px);
-  height: 80vh;
+  height: 79vh;
   z-index: -2;
 }
 </style>

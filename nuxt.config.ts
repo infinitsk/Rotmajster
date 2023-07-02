@@ -2,6 +2,5 @@
 export default defineNuxtConfig({
     app: {
         baseURL: '/Rotmajster/', // baseURL: '/<repository>/'
-        public
       }
 })
