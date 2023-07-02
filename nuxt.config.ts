@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     app: {
-        baseURL: '/Rotmajster/' // baseURL: '/<repository>/'
+        baseURL: '/Rotmajster/', // baseURL: '/<repository>/'
+        public
       }
 })
