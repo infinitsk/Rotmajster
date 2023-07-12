@@ -57,8 +57,8 @@
 
 <template>
   <div>
+    <title>Kontaktujte ma</title>
     <div class="bg"></div>
-    <!--Niektoré veci úplne nefungujú ale to som si robil navyše veci ktoré boli mimo zadania-->
     <div class="containerMessage">
       <div class="messageContainer">
         <div class="error" v-if="showError==1" :class="{messageContainer: showError!=0}">
@@ -66,7 +66,7 @@
           <p>Skús opraviť červené vstupy</p>
         </div>
         <div class="success" v-else-if="showError==0" :class="{messageContainer: showError==0}">
-          <h3>Úspešne odoslané</h3>
+          <h3>Úspešne odoslané (zatiaľ len na frontende)</h3>
           <p>Správu si určite pozriem 😉</p>
         </div>
       </div>
@@ -203,4 +203,5 @@ h3{
   0%   {top: -20%; opacity: 0;}
   100%  {top: 5%; opacity: 1;}
 }
+
 </style>

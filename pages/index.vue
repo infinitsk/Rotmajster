@@ -2,6 +2,7 @@
 
 <template>
   <div>
+    <title>P. Rothmajer</title>
     <NuxtLayout name="custom">
     <div class="bg"></div>
     <div class="content">
@@ -51,17 +52,21 @@ h2{
   align-items: center;
   z-index: 3;
   width: 100%;
-  height: 100%;
-}/*
+}
 @media(max-width: 500px){
 
+  body{
+    position: relative;
+    overflow: hidden;
+  }
   .content{
-    position: fixed;
-    top: 10%;
-    overflow: hidden ;
+    top: 20%;
+    position: absolute;
+    height: 70%;
   }
   .container{
     width: 75%;
+    padding: 15px;
   }
   h1{
     font-size: 5em;
@@ -70,7 +75,7 @@ h2{
     font-size: 2em;
   }
   .bg{
-    height: 100vh;
+    background-size: 280vw, 80vh;
   }
-}*/
+}
 </style>

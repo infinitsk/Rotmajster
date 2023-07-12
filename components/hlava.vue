@@ -5,7 +5,6 @@
 </script>
 
 <template>
-    <div class="menuVon">
       <div class="menu">
         <NuxtLink class="linkLogo" to="/">
           <img src="~/assets/logo.png" alt="Logo sa nenašlo">
@@ -16,7 +15,6 @@
           <NuxtLink class="link" to="hobby">Hobby</NuxtLink>
         </div>
       </div>
-  </div>
 </template>
 
 <style scoped>
@@ -37,18 +35,17 @@ button{
   border-left: 3px gold solid;
   border-right: 3px gold solid;
 }
-
 .menu{
   background-color: black;
   display: flex;
   flex-wrap: nowrap, row;
   width: 100%;
+  height: 5%;
+  text-align: center;
+
   border-bottom: 3px gold solid;
 }
-.menuVon{
-  text-align: center;
-  height: 5%;
-}
+
 .linky{
   display: flex;
   justify-content: space-evenly;
@@ -70,9 +67,21 @@ button{
   width: 10%;
 }
 @media (max-width: 500px){
-  h1{
-    color: red;
-    background-color: white;
+  .linkLogo{
+    width: 25%;
+  }
+  .linky{
+    height: 100%;
+    width: 100vw;
+    font-size: 1em;
+  }
+  .menu{
+    height: 110%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
   }
 }
 </style>

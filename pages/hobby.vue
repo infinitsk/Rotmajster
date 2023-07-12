@@ -1,6 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
+  <title>Hobby</title>
   <NuxtLayout name="custom">
     <div class="bg"></div>
     <div class="contentContainer">

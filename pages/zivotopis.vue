@@ -2,6 +2,7 @@
 
 <template>
   <NuxtLayout name="custom">
+    <title>O mne</title>
     <div>
       <div class="bg"></div>
       <div class="container">

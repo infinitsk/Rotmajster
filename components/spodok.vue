@@ -58,4 +58,22 @@ p {
 .footerContainer p{
   z-index: 5;
 }
+
+@media (max-width: 500px){
+  p{
+    bottom: 0%;
+    padding-bottom: 6%;
+    padding-top: 6%;
+  }
+  .obrazky{
+    z-index: 10;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 4%;
+    padding-right: 3.5%;
+  }
+  .obrazky img{
+    width: 300%;
+  }
+}
 </style>
