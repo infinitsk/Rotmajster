@@ -55,25 +55,41 @@ p {
   display: flex;
   z-index: 5;
 }
-.footerContainer p{
+
+.footerContainer p {
   z-index: 5;
 }
 
-@media (max-width: 500px){
-  p{
+@media (max-width: 500px) {
+  p {
     bottom: 0%;
     padding-bottom: 6%;
     padding-top: 6%;
   }
-  .obrazky{
+
+  .obrazky {
     z-index: 10;
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 4%;
     padding-right: 3.5%;
   }
-  .obrazky img{
+
+  .obrazky img {
     width: 300%;
   }
 }
-</style>
+
+@media (min-width: 1200px) {
+  p {
+    padding-bottom: 2%;
+    padding-top: 2%;
+  }
+}
+
+@media (min-width: 1800px) {
+  p {
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+}</style>

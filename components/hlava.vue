@@ -1,28 +1,29 @@
 <script setup>
-  const vypis=() =>{
-    console.log("fungujem")
-  }
+const vypis = () => {
+  console.log("fungujem")
+}
 </script>
 
 <template>
-      <div class="menu">
-        <NuxtLink class="linkLogo" to="/">
-          <img src="~/assets/logo.png" alt="Logo sa nenašlo">
-        </NuxtLink>
-        <div class="linky">
-          <NuxtLink class="link" to="/">Domov</NuxtLink>
-          <NuxtLink class="link" to="zivotopis">Životopis</NuxtLink>
-          <NuxtLink class="link" to="hobby">Hobby</NuxtLink>
-        </div>
-      </div>
+  <div class="menu">
+    <NuxtLink class="linkLogo" to="/">
+      <img src="~/assets/logo.png" alt="Logo sa nenašlo">
+    </NuxtLink>
+    <div class="linky">
+      <NuxtLink class="link" to="/">Domov</NuxtLink>
+      <NuxtLink class="link" to="zivotopis">Životopis</NuxtLink>
+      <NuxtLink class="link" to="hobby">Hobby</NuxtLink>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-img{
+img {
   width: 100%;
   height: 100%;
 }
-button{
+
+button {
   background-color: black;
   border: none;
   border-radius: 5px;
@@ -35,7 +36,8 @@ button{
   border-left: 3px gold solid;
   border-right: 3px gold solid;
 }
-.menu{
+
+.menu {
   background-color: black;
   display: flex;
   flex-wrap: nowrap, row;
@@ -46,7 +48,7 @@ button{
   border-bottom: 3px gold solid;
 }
 
-.linky{
+.linky {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -57,25 +59,30 @@ button{
   width: 90%;
   font-size: 2em;
 }
-.link{
+
+.link {
   color: white;
   text-decoration: none;
   padding: 1%;
   height: 10%;
 }
-.linkLogo{
+
+.linkLogo {
   width: 10%;
 }
-@media (max-width: 500px){
-  .linkLogo{
+
+@media (max-width: 500px) {
+  .linkLogo {
     width: 25%;
   }
-  .linky{
+
+  .linky {
     height: 100%;
     width: 100vw;
     font-size: 1em;
   }
-  .menu{
+
+  .menu {
     height: 110%;
     width: 100%;
     display: flex;
@@ -83,5 +90,4 @@ button{
     align-items: center;
     z-index: 5;
   }
-}
-</style>
+}</style>

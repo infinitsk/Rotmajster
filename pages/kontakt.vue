@@ -1,57 +1,57 @@
 <script setup>
-  let templaty = useTemplate();
-  let template = reactive(templaty.template)
-  let error = reactive(templaty.errory)
-  let showError = reactive(2);
+let templaty = useTemplate();
+let template = reactive(templaty.template)
+let error = reactive(templaty.errory)
+let showError = reactive(2);
+console.table(error)
+const odosli = () => {
+  kontrola()
+  if (error.meno == 0 && error.priezvisko == 0 && error.mail == 0 && error.sprava == 0) {
+    console.log("Odoslanie (zatiaľ je len frontend)")
+    showError = 0
+    template.meno = "",
+      template.priezvisko = "",
+      template.mail = "",
+      template.sprava = ""
+  }
+  else {
+    console.log("ne")
+    showError = 1
+  }
+}
+const kontrola = () => {
+  //console.log(template)
+  if (template.meno.trim()) {
+    error.meno = 0
+  }
+  else {
+    error.meno = 1
+  }
+  if (template.priezvisko.trim()) {
+    error.priezvisko = 0
+  }
+  else {
+    error.priezvisko = 1
+  }
+  if (template.mail.trim() && template.mail.includes("@") == true) {
+    error.mail = 0
+  }
+  else {
+    error.mail = 1
+  }
+  if (template.sprava.trim()) {
+    error.sprava = 0
+  }
+  else {
+    error.sprava = 1
+  }
   console.table(error)
-  const odosli = () => { 
-    kontrola()
-    if(error.meno==0 && error.priezvisko==0 && error.mail==0 && error.sprava==0){
-      console.log("Odoslanie (zatiaľ je len frontend)")
-      showError=0
-      template.meno="",
-      template.priezvisko="",
-      template.mail="",
-      template.sprava=""
-    }
-    else{
-      console.log("ne")
-      showError=1
-    }
-  }
-  const kontrola = () =>{
-    //console.log(template)
-    if(template.meno.trim()){
-      error.meno=0
-    }
-    else{
-      error.meno=1
-    }
-    if(template.priezvisko.trim()){
-      error.priezvisko=0
-    }
-    else{
-      error.priezvisko=1
-    }
-    if(template.mail.trim() && template.mail.includes("@")==true){
-      error.mail=0
-    }
-    else{
-      error.mail=1
-    }
-    if(template.sprava.trim()){
-      error.sprava=0
-    }
-    else{
-      error.sprava=1
-    }
-    console.table(error)
-    console.log(showError)
-  }
-  const skry = () =>{
-    let hide= reactive(0)
-    return hide
-  }
+  console.log(showError)
+}
+const skry = () => {
+  let hide = reactive(0)
+  return hide
+}
 
 </script>
 
@@ -61,11 +61,11 @@
     <div class="bg"></div>
     <div class="containerMessage">
       <div class="messageContainer">
-        <div class="error" v-if="showError==1" :class="{messageContainer: showError!=0}">
+        <div class="error" v-if="showError == 1" :class="{ messageContainer: showError != 0 }">
           <h3>Zle si vyplnil formulár</h3>
           <p>Skús opraviť červené vstupy</p>
         </div>
-        <div class="success" v-else-if="showError==0" :class="{messageContainer: showError==0}">
+        <div class="success" v-else-if="showError == 0" :class="{ messageContainer: showError == 0 }">
           <h3>Úspešne odoslané (zatiaľ len na frontende)</h3>
           <p>Správu si určite pozriem 😉</p>
         </div>
@@ -74,54 +74,63 @@
     <div class="content">
       <div class="form">
         <h1>Pošli mi E-mail:</h1>
-        <input type="text" id="meno" placeholder="Meno" v-model="template.meno" :class="{chyba: error.meno==1}">
-        <input type="text" id="priezvisko" placeholder="Priezvisko" v-model="template.priezvisko" :class="{chyba: error.priezvisko==1}">
-        <input type="text" id="e-mail" placeholder="E-mail" v-model="template.mail" :class="{chyba: error.mail==1}">
+        <input type="text" id="meno" placeholder="Meno" v-model="template.meno" :class="{ chyba: error.meno == 1 }">
+        <input type="text" id="priezvisko" placeholder="Priezvisko" v-model="template.priezvisko"
+          :class="{ chyba: error.priezvisko == 1 }">
+        <input type="text" id="e-mail" placeholder="E-mail" v-model="template.mail" :class="{ chyba: error.mail == 1 }">
         <label for="sprava">Správa</label>
-        <textarea id="sprava" v-model="template.sprava" :class= "{chyba: error.sprava==1}"></textarea>
+        <textarea id="sprava" v-model="template.sprava" :class="{ chyba: error.sprava == 1 }"></textarea>
         <button @click="odosli()" id="send">Odošli</button>
       </div>
     </div>
     <spodok></spodok>
-</div>
+  </div>
 </template>
 
 <style scoped>
-.form button, input, textarea{
+.form button,
+input,
+textarea {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.795);
   color: white;
   text-align: center;
 }
-.form button{
+
+.form button {
   height: 10%;
   width: 5%;
   margin-top: 3%;
 }
-input{
+
+input {
   margin-bottom: 1%;
   height: 7%;
   width: 30%;
 }
-textarea{
+
+textarea {
   resize: none;
   width: 70%;
   height: 40%;
   margin-top: 0.5%;
 }
-label{
+
+label {
   margin-top: 0.5%;
 }
-.bg{
+
+.bg {
   height: 95vh;
   background-image: url("~/assets/background.jpg");
   background-size: cover;
   filter: blur(5px);
-  }
-  .form {
+}
+
+.form {
   display: flex;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.4); 
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
   font-weight: bold;
   border: 3px solid #f1f1f1;
@@ -137,10 +146,12 @@ label{
   flex-direction: column;
   align-items: center;
 }
-.chyba{
+
+.chyba {
   border: solid red 2px;
 }
-.error{
+
+.error {
   z-index: 6;
   display: flex;
   align-items: center;
@@ -151,7 +162,8 @@ label{
   color: white;
   border: 2px solid black;
 }
-.messageContainer{
+
+.messageContainer {
   width: 30%;
   display: flex;
   justify-content: center;
@@ -162,19 +174,23 @@ label{
   animation-duration: 5s;
   animation-timing-function: ease-out;
 }
-.containerMessage{
+
+.containerMessage {
   display: flex;
   justify-content: center;
 }
-h3{
+
+h3 {
   z-index: inherit;
   text-align: center;
 }
-.error p{
+
+.error p {
   z-index: 6;
   text-align: center;
 }
-.success{
+
+.success {
   z-index: 6;
   display: flex;
   align-items: center;
@@ -184,24 +200,48 @@ h3{
   background-color: rgba(0, 255, 0, 0.5);
   color: white;
   border: 2px solid black;
+  text-align: center;
 }
-.invisible{
-  visibility: hidden;
-}
-#form{
+
+#form {
   line-height: 10px;
 }
-#sprava{
+
+#sprava {
   height: 30%;
 }
-#send{
+
+#send {
   width: 15%;
   text-align: center;
 }
 
-@keyframes animaciaMessagu{
-  0%   {top: -20%; opacity: 0;}
-  100%  {top: 5%; opacity: 1;}
+@keyframes animaciaMessagu {
+  0% {
+    top: -20%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 5%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px){
+  input{
+    padding: 2px;
+  }
+  .form{
+    width: 75vw;
+    height: 35vh;
+  }
+  .messageContainer{
+    width: 60%;
+  }
+  .form button{
+    height: 18%;
+  }
 }
 
 </style>

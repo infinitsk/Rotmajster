@@ -4,27 +4,28 @@
   <div>
     <title>P. Rothmajer</title>
     <NuxtLayout name="custom">
-    <div class="bg"></div>
-    <div class="content">
-      <div class="container">
-        <h1>Vitajte</h1><br>
-        <h2>na mojej stránke 👋</h2>
+      <div class="bg"></div>
+      <div class="content">
+        <div class="container">
+          <h1>Vitajte</h1><br>
+          <h2>na mojej stránke 👋</h2>
+        </div>
       </div>
-    </div>
     </NuxtLayout>
 
   </div>
 </template>
 
 <style scoped>
-
-h1{
+h1 {
   font-size: 5em;
 }
-h2{
+
+h2 {
   font-size: 3em;
 }
-.container{
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +38,8 @@ h2{
   padding-bottom: 2%;
   z-index: 3;
 }
-.bg{
+
+.bg {
   background-image: url("~/assets/background.jpg");
   background-size: cover;
   background-position-y: -100px;
@@ -46,36 +48,64 @@ h2{
   height: 77vh;
   z-index: -2;
 }
-.content{
+
+.content {
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 3;
   width: 100%;
 }
-@media(max-width: 500px){
 
-  body{
+@media(max-width: 500px) {
+
+  body {
     position: relative;
     overflow: hidden;
   }
-  .content{
+
+  .content {
     top: 20%;
     position: absolute;
     height: 70%;
   }
-  .container{
+
+  .container {
     width: 75%;
     padding: 15px;
   }
-  h1{
-    font-size: 5em;
+
+  h1 {
+    font-size: 4em;
   }
-  h2{
+
+  h2 {
     font-size: 2em;
   }
-  .bg{
+
+  .bg {
     background-size: 280vw, 80vh;
+    height: 78vh;
   }
 }
-</style>
+
+@media (min-width: 1200px) {
+  .bg {
+    background-size: 100vw, 80vh;
+    height: 85vh;
+  }
+
+  .content {
+    margin-top: -15%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .bg {
+    height: 77vh;
+  }
+
+  .content {
+    margin-top: 0;
+  }
+}</style>
